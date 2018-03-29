@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css horizontal vertical center</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*要垂直水平居中的内容固定宽200px高200px*/
+		/*方法1 父元素相对本身定位，要居中元素绝对定位，top和left值为50%，margin-left和margin-top为负宽高的一半  缺点是必须知道宽高*/
+		/*.box{
+			position: relative;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			background: red;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -100px;
+		}*/
+		/*方法2 设置元素的相对于自身的偏移度为负50%(也就是元素自身尺寸的一半) 这是css3里的样式;缺点:兼容性不好，只支持IE9+的浏览器,优点是不用知道元素宽高也可以*/
+		/*.box{
+			position: relative;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			background: red;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}*/
+		/*方法3 父元素相对自身定位，子元素绝对定位，top,buttom,left,right都为0，margin为auto*/
+		/*.box{
+			position: relative;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			background: red;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+		}*/
+
+
+		/*要垂直水平居中的不内容固定宽2*/
+		/*方法1 设置元素的相对于自身的偏移度为负50%(也就是元素自身尺寸的一半) 这是css3里的样式;缺点:兼容性不好，只支持IE9+的浏览器*/
+		/*.box{
+			position: relative;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			background: red;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}*/
+		/*方法2 父元素display:flex，子元素margin为auto*/
+		.box{
+			display: flex;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			margin: auto;
+			background: red;
+		}
+		/*方法3 父元素display table；子元素display为table-cell，text-align为center，vertical-align:middle*/
+		/*.box{
+			display: table;
+			height: 500px;
+			background: yellow;
+		}
+		.center{
+			background: red;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}*/
+	</style>
+</head>
+<body >
+	<div class="box">
+		<div class="center">中间中间中间中间中间中间中间中间中间中间中间中间中间中间中间中间中间中间</div>
+	</div>
+</body>
+</html>

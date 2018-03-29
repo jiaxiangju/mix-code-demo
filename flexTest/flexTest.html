@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex骰子布局</title>
+	<!-- http://www.ruanyifeng.com/blog/2015/07/flex-examples.html -->
+	<!-- http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html -->
+	<style type="text/css">
+		[class ^= "flexBox"] {
+			margin: 16px;
+			padding: 4px;
+			background-color: #e7e7e7;
+			width: 104px;
+			height: 104px;
+			object-fit: contain;
+			box-shadow: inset 0 5px white,
+						inset 0 -5px #bbb,
+						inset 5px 0 #d7d7d7,
+						inset -5px 0 #d7d7d7;
+			border-radius: 10%;
+		}
+		.item{
+			display: block;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			margin: 4px;
+			background-color: #333;
+			box-shadow: inset 0 3px #111, inset 0 -3px #555;
+		}
+
+		.flexBox6{
+			display: flex;
+			justify-content: space-between;
+		}
+		.flexBox6 .column{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		/*.flexBox5{
+			display: flex;
+			justify-content: center;
+		}
+		.flexBox5 .column{
+			display: flex;
+			flex-direction: column;/*主轴方向*/
+			/*justify-content: space-between;项目在主轴方向上的对齐方式*/
+			/*align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。*/
+		}
+		/*.flexBox5 .center{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}*/
+		/*or*/
+		.flexBox5{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.flexBox5 .column{
+			display: flex;
+			flex-direction: row;/*主轴方向*/
+			justify-content: space-between;/*主轴方向上的对齐方式*/
+			/*align-item: 与主轴方向交叉轴的对齐方式*/
+		}
+		.flexBox5 .center{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+		
+
+		.flexBox4{
+			display: flex;
+			justify-content: space-between;
+		}
+		.flexBox4 .column{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.flexBox3{
+			display: flex;
+		}
+		.flexBox3 .item:nth-of-type(2) {
+			align-self: center;
+		}
+		.flexBox3 .item:nth-of-type(3){
+			align-self: flex-end;
+		}
+
+		.flexBox2{
+			display: flex;
+			justify-content: space-between;
+		}
+		.flexBox2 .item:nth-of-type(2){
+			align-self: flex-end;
+		}
+
+		.flexBox1{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="flexBox6">
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+	</div>
+	<div class="flexBox5">
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		<div class="center">
+			<span class="item"></span>
+		</div>
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+	</div>
+	<div class="flexBox4">
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+		<div class="column">
+			<span class="item"></span>
+			<span class="item"></span>
+		</div>
+	</div>
+	<div class="flexBox3">
+		<span class="item"></span>
+		<span class="item"></span>
+		<span class="item"></span>
+	</div>
+	<div class="flexBox2">
+		<span class="item"></span>
+		<span class="item"></span>
+	</div>
+	<div class="flexBox1">
+		<span class="item"></span>
+	</div>
+</body>
+</html>

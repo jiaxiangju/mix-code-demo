@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css border</title>
+	<style type="text/css">
+		/*border呈现梯形*/
+		.box1{
+			width: 100px;
+			height: 100px;
+			border-top: 30px solid red;
+			border-bottom: 30px solid blue;
+			border-left: 30px solid green;
+			border-right: 30px solid black;
+		}
+		/*如果例子宽高为0 4边的border就会呈现出4个三角形*/
+		.box2{
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid red;
+			border-bottom: 100px solid blue;
+			border-left: 100px solid green;
+			border-right: 100px solid black;
+		}
+		/*如果想要一个方向向右的三角形，把其他边的border设置为透明颜色即可*/
+		.box3{
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid transparent;
+			border-left: 100px solid green;
+			border-right: 100px solid transparent;
+		}
+		.box4{
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid red;
+			border-bottom: 100px solid transparent;
+			border-left: 100px solid transparent;
+			border-right: 100px solid transparent;
+		}
+		.box5{
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid blue;
+			border-left: 100px solid transparent;
+			border-right: 100px solid transparent;
+		}
+		.box6{
+			width: 0px;
+			height: 0px;
+			border-top: 100px solid transparent;
+			border-bottom: 100px solid transparent;
+			border-left: 100px solid transparent;
+			border-right: 100px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function() {
+			console.log('window load');
+			var img = new Image();
+			img.src = 'https://fa_b_2018_tassets.dajieimg.com/up/invitation2013/b-candidate/img/candidate/laugh.png';
+			img.onload=function() {
+				console.log('new img load');
+			};
+			document.getElementsByTagName('body')[0].appendChild(img);
+		};
+		document.onready=function() {
+			console.log('document load');
+			var img = new Image();
+			img.src = 'https://fa_b_2018_tassets.dajieimg.com/up/invitation2013/b-candidate/img/candidate/laugh.png';
+			img.onload=function() {
+				console.log('new img load');
+			};
+			document.getElementsByTagName('body')[0].appendChild(img);
+		};
+
+
+		
+	</script>
+</head>
+<body >
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+	<img id="img" src="https://fa_b_2018_tassets.dajieimg.com/up/invitation2013/b-candidate/img/candidate/laugh.png">
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flex网格布局</title>
+	<!-- http://www.ruanyifeng.com/blog/2015/07/flex-examples.html -->
+	<!-- http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html -->
+	<style type="text/css">
+		.grid-cell{
+			background-color: blue;
+			margin: 20px;
+			height: 100px;
+			color: #fff;
+		}
+
+
+		/*容器的属性*/
+		/*
+			flex-direction：属性决定主轴的方向（即项目的排列方向）
+			flex-wrap：默认情况下，项目都排在一条线（又称"轴线"）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+			flex-flow：属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+			justify-content：定义了主轴上的对齐方式
+			align-items：定义项目在交叉轴上如何对齐
+			align-content：定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+		*/
+		.grid{
+			display: flex;
+		}
+		/*项目有6个属性*/
+		/*
+			order：定义项目排列顺序。数值越小，排列越靠前，默认为0
+			flex-grow：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+					如果属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+			flex-shrink：定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+			flex-basis：定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+			flex：是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+			align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+		*/
+		.grid .grid-cell{
+			flex: 1;
+		}
+		.grid .grid-cell:nth-of-type(2){
+			order: 1;
+			flex: 0 0 50%;
+		}
+
+
+		.InputAddOn{
+			display: flex;
+		}
+		.InputAddOn-field{
+			flex: 1;
+		}
+
+
+		p{
+			margin: 0;
+			padding: 0;
+		}
+		.Media{
+			display: flex;
+			align-items: flex-start;
+			margin-top: 40px;
+			background-color: lightblue;
+		}
+		.Media-figure{
+			margin-right: 1em;
+		}
+		.Media-body{
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="grid">
+		<div class="grid-cell">1</div>
+		<div class="grid-cell">2</div>
+		<div class="grid-cell">3</div>
+		<div class="grid-cell">4</div>
+	</div>
+	
+
+	<!-- 输入框布局 -->
+	<div class="InputAddOn">
+		<span class="InputAddOn-item">Amount</span>
+		<input class="InputAddOn-field" type="" name="">
+		<button class="InputAddOn-item">Send</button>
+	</div>
+
+	<!-- 悬挂式布局 -->
+	<div class="Media">
+		<img class="Media-figure" src="https://assets.dajieimg.com/images/header/newHeader/logo-b.png">
+		<p>圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的圆顶时康师傅骄傲加进基加工回去拉斯科地方叵茵埃里克森地方为了距离考试的</p>
+	</div>
+
+</body>
+</html>
